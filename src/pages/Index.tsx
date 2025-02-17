@@ -1,8 +1,7 @@
-
 import { motion } from "framer-motion";
 import { Header } from "@/components/ui/header";
 import { CTAButton } from "@/components/ui/cta-button";
-import { Plant, DollarSign, Clock, Users } from "lucide-react";
+import { Sprout, DollarSign, Clock, Users, ArrowRight } from "lucide-react";
 
 export default function Index() {
   return (
@@ -58,7 +57,7 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: Plant,
+                icon: Sprout,
                 title: "Suporte Especializado",
                 description: "Conte com nossa equipe de especialistas para te ajudar em cada passo",
               },
