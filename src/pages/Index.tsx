@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Header } from "@/components/ui/header";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -9,31 +8,96 @@ export default function Index() {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-agrogoods-light to-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <span className="inline-block px-4 py-2 rounded-full bg-agrogoods-primary/10 text-agrogoods-primary text-sm font-semibold mb-6">
-              Seja um Vendedor Independente
-            </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Tenha sua própria loja agropecuária online
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Monte seu negócio online, trabalhe de onde quiser e receba suporte completo dos nossos especialistas.
-            </p>
-            <CTAButton href="#cadastro" className="text-xl">
-              Começar agora
-            </CTAButton>
-            <p className="mt-4 text-sm text-gray-500">
-              Comece por apenas R$ 1,00 na primeira venda
-            </p>
-          </motion.div>
+      {/* Hero Banner Section */}
+      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-agrogoods-light via-white to-agrogoods-light/50 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23015501' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }} />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-left"
+            >
+              <span className="inline-block px-4 py-2 rounded-full bg-agrogoods-primary/10 text-agrogoods-primary text-sm font-semibold mb-6">
+                Seja um Vendedor Independente
+              </span>
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Tenha sua própria 
+                <span className="text-agrogoods-primary block">loja agropecuária</span>
+                online
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">
+                Monte seu negócio online, trabalhe de onde quiser e receba suporte completo dos nossos especialistas.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <CTAButton href="#cadastro" className="text-xl">
+                  Começar agora
+                </CTAButton>
+                <div className="flex items-center justify-center sm:justify-start">
+                  <span className="text-agrogoods-primary font-semibold">
+                    Apenas R$ 1,00 na primeira venda
+                  </span>
+                </div>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-12">
+                <div className="text-center sm:text-left">
+                  <div className="text-3xl font-bold text-agrogoods-primary">+1000</div>
+                  <div className="text-sm text-gray-600">Vendedores Ativos</div>
+                </div>
+                <div className="text-center sm:text-left">
+                  <div className="text-3xl font-bold text-agrogoods-primary">+5000</div>
+                  <div className="text-sm text-gray-600">Produtos Disponíveis</div>
+                </div>
+                <div className="text-center sm:text-left">
+                  <div className="text-3xl font-bold text-agrogoods-primary">24/7</div>
+                  <div className="text-sm text-gray-600">Suporte Especializado</div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Image/Illustration */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden md:block relative"
+            >
+              <div className="relative w-full h-[600px]">
+                <div className="absolute inset-0 bg-gradient-to-br from-agrogoods-primary/20 to-agrogoods-light rounded-2xl overflow-hidden">
+                  <img
+                    src="/placeholder.svg"
+                    alt="AgroGoods Vendedor"
+                    className="w-full h-full object-cover mix-blend-overlay opacity-75"
+                  />
+                </div>
+                {/* Floating Elements */}
+                <motion.div
+                  animate={{ y: [-10, 10, -10] }}
+                  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                  className="absolute -top-6 right-12 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center"
+                >
+                  <Sprout className="w-12 h-12 text-agrogoods-primary" />
+                </motion.div>
+                <motion.div
+                  animate={{ y: [10, -10, 10] }}
+                  transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+                  className="absolute bottom-12 -left-6 w-20 h-20 bg-agrogoods-primary rounded-xl shadow-lg flex items-center justify-center"
+                >
+                  <DollarSign className="w-10 h-10 text-white" />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
