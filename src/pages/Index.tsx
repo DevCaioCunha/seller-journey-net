@@ -3,6 +3,7 @@ import { Header } from "@/components/ui/header";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Sprout, DollarSign, Clock, Users, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
 
 export default function Index() {
   const navigate = useNavigate();
@@ -311,9 +312,107 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white py-8 border-t">
-        <div className="container mx-auto px-4 text-center text-gray-600">
-          <p>&copy; {new Date().getFullYear()} AgroGoods. Todos os direitos reservados.</p>
+      <footer className="bg-white border-t pt-16 pb-8">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {/* Empresa */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Sobre a AgroGoods</h3>
+              <p className="text-gray-600 mb-4">
+                Transformando o mercado agropecuário através da tecnologia e do empreendedorismo.
+              </p>
+              <div className="flex space-x-4">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+                   className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                   className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                   className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Links Úteis */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Links Úteis</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#beneficios" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                    Benefícios
+                  </a>
+                </li>
+                <li>
+                  <a href="#como-funciona" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                    Como Funciona
+                  </a>
+                </li>
+                <li>
+                  <a href="#cadastro" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                    Cadastre-se
+                  </a>
+                </li>
+                <li>
+                  <a href="/politica-privacidade" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                    Política de Privacidade
+                  </a>
+                </li>
+                <li>
+                  <a href="/termos-uso" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                    Termos de Uso
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contato */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Contato</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <Phone className="w-5 h-5 text-agrogoods-primary mr-2" />
+                  <a href="tel:0800123456" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                    0800 123 456
+                  </a>
+                </li>
+                <li className="flex items-center">
+                  <Mail className="w-5 h-5 text-agrogoods-primary mr-2" />
+                  <a href="mailto:contato@agrogoods.com.br" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                    contato@agrogoods.com.br
+                  </a>
+                </li>
+                <li className="flex items-start">
+                  <MapPin className="w-5 h-5 text-agrogoods-primary mr-2 mt-1" />
+                  <span className="text-gray-600">
+                    Av. Tecnologia Verde, 1000<br />
+                    São Paulo - SP
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Atendimento */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Horário de Atendimento</h3>
+              <div className="text-gray-600">
+                <p className="mb-2">Segunda a Sexta</p>
+                <p className="font-semibold text-agrogoods-primary mb-4">08h às 18h</p>
+                <p className="mb-2">Sábado</p>
+                <p className="font-semibold text-agrogoods-primary">09h às 13h</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="border-t pt-8 text-center">
+            <p className="text-gray-600">
+              &copy; {new Date().getFullYear()} AgroGoods. Todos os direitos reservados.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
