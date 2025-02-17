@@ -7,11 +7,13 @@ interface CTAButtonProps {
   onClick?: () => void;
   className?: string;
   href?: string;
+  type?: "button" | "submit" | "reset";
 }
 
-export const CTAButton = ({ children, onClick, className = "", href }: CTAButtonProps) => {
+export const CTAButton = ({ children, onClick, className = "", href, type = "button" }: CTAButtonProps) => {
   const buttonContent = (
     <motion.button
+      type={type}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={`

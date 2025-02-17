@@ -2,8 +2,17 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/ui/header";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Sprout, DollarSign, Clock, Users, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Index() {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Aqui você pode adicionar a lógica de envio do formulário
+    navigate('/sucesso');
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -259,7 +268,7 @@ export default function Index() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
               Cadastre-se agora
             </h2>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Nome completo
@@ -293,7 +302,7 @@ export default function Index() {
                   required
                 />
               </div>
-              <CTAButton className="w-full justify-center">
+              <CTAButton type="submit" className="w-full justify-center">
                 Enviar cadastro
               </CTAButton>
             </form>
