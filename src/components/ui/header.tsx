@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,22 +11,28 @@ export const Header = () => {
     <header className="fixed w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <a href="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <span className="text-2xl font-bold text-agrogoods-primary">AgroGoods</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#beneficios" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+            <Link to="/" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+              Home
+            </Link>
+            <Link to="/blog" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+              Blog
+            </Link>
+            <a href="/#beneficios" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
               Benefícios
             </a>
-            <a href="#como-funciona" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+            <a href="/#como-funciona" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
               Como Funciona
             </a>
-            <a href="#depoimentos" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+            <a href="/#depoimentos" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
               Depoimentos
             </a>
-            <a href="#cadastro" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+            <a href="/#cadastro" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
               Cadastre-se
             </a>
           </nav>
@@ -45,16 +52,22 @@ export const Header = () => {
             className="md:hidden py-4"
           >
             <div className="flex flex-col space-y-4">
-              <a href="#beneficios" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+              <Link to="/" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                Home
+              </Link>
+              <Link to="/blog" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+                Blog
+              </Link>
+              <a href="/#beneficios" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
                 Benefícios
               </a>
-              <a href="#como-funciona" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+              <a href="/#como-funciona" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
                 Como Funciona
               </a>
-              <a href="#depoimentos" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+              <a href="/#depoimentos" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
                 Depoimentos
               </a>
-              <a href="#cadastro" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
+              <a href="/#cadastro" className="text-gray-600 hover:text-agrogoods-primary transition-colors">
                 Cadastre-se
               </a>
             </div>
